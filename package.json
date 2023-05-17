@@ -1,9 +1,10 @@
 {
-  "name": "algorithms",
-  "version": "1.0.0",
-  "description": "Algorithms",
-  "scripts": {},
-  "keywords": [],
-  "author": "Vitalii Tereshchenko",
-  "license": "ISC"
+    "name": "algorithms",
+    "version": "1.0.0",
+    "description": "Algorithms",
+    "type": "module",
+    "scripts": {},
+    "keywords": [],
+    "author": "Vitalii Tereshchenko",
+    "license": "ISC"
 }

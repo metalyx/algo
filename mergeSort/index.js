@@ -4,20 +4,20 @@
  * @returns {number[]}
  */
 export function mergeSort(array) {
-  if (array.length <= 1) {
-    return array;
-  }
+    if (array.length <= 1) {
+        return array;
+    }
 
-  // Find mid index, if length/2 is odd -> take lower one
-  const middleIndex = Math.floor(array.length / 2);
+    // Find mid index, if length/2 is odd -> take lower one
+    const middleIndex = Math.floor(array.length / 2);
 
-  // Take left part of initial array and sort it
-  const leftSortedArray = mergeSort(array.slice(0, middleIndex));
+    // Take left part of initial array and sort it
+    const leftSortedArray = mergeSort(array.slice(0, middleIndex));
 
-  // Do the same to the right part
-  const rightSortedArray = mergeSort(array.slice(middleIndex));
+    // Do the same to the right part
+    const rightSortedArray = mergeSort(array.slice(middleIndex));
 
-  return merge(leftSortedArray, rightSortedArray);
+    return merge(leftSortedArray, rightSortedArray);
 }
 
 /**
@@ -27,22 +27,22 @@ export function mergeSort(array) {
  * @returns {number[]}
  */
 function merge(leftArray, rightArray) {
-  // make array for storing merged values
-  const mergedArray = [];
+    // make array for storing merged values
+    const mergedArray = [];
 
-  // while both array has values we compare first elements in each array
-  // and push the smallest to the mergedArray
-  while (leftArray.length && rightArray.length) {
-    if (leftArray[0] < rightArray[0]) {
-      // Remove the element that we have pushed to the mergedArray
-      mergedArray.push(leftArray.shift());
-    } else {
-      mergedArray.push(rightArray.shift());
+    // while both array has values we compare first elements in each array
+    // and push the smallest to the mergedArray
+    while (leftArray.length && rightArray.length) {
+        if (leftArray[0] < rightArray[0]) {
+            // Remove the element that we have pushed to the mergedArray
+            mergedArray.push(leftArray.shift());
+        } else {
+            mergedArray.push(rightArray.shift());
+        }
     }
-  }
 
-  // return mergedArray, and if our left and right arrays
-  // had not equal lengths, we just write them to the end
-  // since they are the biggest ones
-  return [...mergedArray, ...leftArray, ...rightArray];
+    // return mergedArray, and if our left and right arrays
+    // had not equal lengths, we just write them to the end
+    // since they are the biggest ones
+    return [...mergedArray, ...leftArray, ...rightArray];
 }
